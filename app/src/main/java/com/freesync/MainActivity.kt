@@ -1,5 +1,6 @@
 package com.freesync
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
@@ -23,15 +24,26 @@ class MainActivity : AppCompatActivity() {
         btnClear.setOnClickListener {
             log("", true)
         }
+        
+        btnStart.setOnClickListener {
+            startActivity(Intent(this@MainActivity, TestActivity::class.java))
+        }
 
         btnCall.setOnClickListener {
             FreeSync.default().call<String>(key = this, value = "哈哈哈哈")
         }
 
+
+        FreeSync.default().addCall<UserBean>("hhh") {
+            it?.let {
+                log("name:${it.name},age:${it.age}")
+            }
+        }
+
     }
 
 
-    private fun log(text: String, isNew: Boolean = false) {
+    private fun log(text: String?, isNew: Boolean = false) {
         if (isNew) {
             etLog.setText("$text\n")
         } else {

@@ -26,6 +26,13 @@
         android:layout_height="wrap_content"
         android:text="清空日志" />
 
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="打开新Activity" />
+
+
     <EditText
         android:id="@+id/etLog"
         android:layout_width="match_parent"

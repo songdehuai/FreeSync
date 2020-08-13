@@ -38,3 +38,7 @@ FreeSync.default().call<String>(key = this, value = "哈哈哈哈")
 ```kotlin
 FreeSync.with(key: Any).call<String>(key = this, value = "哈哈哈哈")
 ```
+
+> 	finally ！！！ 
+
+###  别忘了在不用的时候，调用 `remove` 掉不用的FreeSync或者Key 
